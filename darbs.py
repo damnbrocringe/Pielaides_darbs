@@ -47,6 +47,11 @@ def add_user_window():
 
     def add_user():
         user = username_entry.get()
+
+        if user == "":
+            messagebox.showerror("Kļūda","Lietotājvārds nevar būt tukšs")
+            return
+        
         password = encrypt_password(password_entry.get())
         cursor = conn.cursor()
 
